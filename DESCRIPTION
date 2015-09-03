@@ -1,13 +1,12 @@
 Package: backpipe
 Type: Package
 Title: Backward Pipe Operator
-Version: 0.1.1
+Version: 0.1.2
 Date: 2015-09-03
 Authors@R: c(
-    person("Christopher", "Brown", role = c("aut", "cre"), email = "chris.brown@decisionpatterns.com"),
-    person(family = "Decision Patterns", role = "cph")
+    person("Christopher", "Brown", role =c("cre","aut"), email = "chris.brown@decisionpatterns.com"),
+    person(family = "Decision Patterns", role = c("cph") )
     )
-Maintainer: Christopher Brown <chris.brown@decisionpatterns.com>
 Description: Provides a backward-pipe operator for 'magrittr' (%<%) or 
     'pipeR' (%<<%) that allows for a performing operations from right-to-left. 
     This is useful in instances where there is right-to-left ordering commonly 
@@ -17,6 +16,7 @@ Depends:
     R (>= 3.1.0)
 Suggests: 
     magrittr (>= 1.5),
+    pipeR (>= 0.6.0.6),
     testthat,
     shiny,
     knitr

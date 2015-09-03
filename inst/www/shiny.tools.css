@@ -1,0 +1,12 @@
+/* shiny.tools.css */
+
+/* Styles for columnDefs */
+td.alignRight { 
+  text-align: right; 
+  padding-right:50px;
+}
+
+td.alignLeft { 
+  text-align:left;  
+}
+

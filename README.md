@@ -1,13 +1,3 @@
----
-title: "Backpipe Operations"
-author: "Christopher Brown"
-date: "`r Sys.Date()`"
-output: rmarkdown::html_vignette
-vignette: >
-  %\VignetteIndexEntry{Backpipe Operations}
-  %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteEncoding{UTF-8}
----
 
 Popular packages *magrittr* and *pipeR* packages do not provide a backward 
 piping operator. This package provides operators `%<%` 

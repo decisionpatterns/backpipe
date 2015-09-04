@@ -11,19 +11,9 @@ provides the `backpipe`function for defining backpipe operators
 
 Some structure are simply better expressed with right-to-left operations. This 
 more common than one might expect.  For example, right-to-left structures are 
-better at representing (some) trees, directories and nested structures.  
-As an example, consider a directory structure. Typically files on a directory 
-are described by starting at the root node, such as `/home/cbrown/docs/file`. 
-To programattically assemble this using common pipe, one might code:
+better at representing trees, directories and nested structures.  
 
-    "file" %>% file.path('docs') %>% file.path('cbrown') %>% file.path('home')
-   
-That is, forward-piping has forced a reversal of the natural ordering. The 
-backpipe operators allows for a more natural and readable syntax:
-
-    file.path('home') %<% file.path('cbrown') %<% file.path('docs') %<% "file"
-
-As a second example, consider how *shiny* has the developer write code that 
+As an example, consider how *shiny* has the developer write code that 
 produces HTML.  
 
     h1( "content", role="heading" )        %>%
@@ -41,9 +31,9 @@ This produces valid HTML:
       </div>
     </div> 
 
-but illustrates two incongruities between code and output. The First is the 
-aforemention reversal of order between code and output. This makes it hard to 
-debug the generated HTML. The second problems is that code indentation no longer
+but illustrates two incongruities between code and output. The First is a
+reversal of order between code and output. This makes debugging code or the generated
+HTML. The second problems is that code indentation no longer
 illustrate the nested structure of the output. In fact, writing cleaner *shiny*
 code was the motivation for the creation of the package. Using the backpipe 
 operator the same code can be written as:
@@ -53,7 +43,8 @@ operator the same code can be written as:
         div( class="inner")                %<% 
           h1( "content", role="heading" ) 
 
-This much better matches the generated HTML output.
+Using the backpipe operator, the code more closely matches the generated output. Debugging
+time is lessened and 
 
 
 ## Usage

@@ -13,15 +13,8 @@ Some structure are simply better expressed with right-to-left operations. This
 more common than one might expect.  For example, right-to-left structures are 
 better at representing trees, directories and nested structures.  
 
-As an example, consider how *shiny* has the developer write code that 
-produces HTML.  
-
-    h1( "content", role="heading" )        %>%
-      div( class="inner")                  %>%
-        div( class="outer")                %>% 
-          div( class="outer-outer")      
-      
-This produces valid HTML: 
+As an example, consider how **shiny** has the developer write code that 
+produces HTML.  Let's say you wished to produce the HTML:  
 
     <div class="outer-outer">
       <div class="outer">
@@ -30,12 +23,39 @@ This produces valid HTML:
         </div>
       </div>
     </div> 
+    
+HTML is ugly, but works.  With **shiny**, you'd write: 
 
-but illustrates two incongruities between code and output. The First is a
-reversal of order between code and output. This makes debugging code or the generated
-HTML. The second problems is that code indentation no longer
-illustrate the nested structure of the output. In fact, writing cleaner *shiny*
-code was the motivation for the creation of the package. Using the backpipe 
+    div( class="outer-outer", 
+      div( class="outer",
+        div( class="inner",
+          h1( "content", role="heading" )
+        )
+      )
+    )
+
+Yuck!!! This is almost as ugly as the HTML.  Using **magrittr** or **pipeR**
+this can be a little neater:
+
+    h1( "content", role="heading" )        %>%
+      div( class="inner")                  %>%
+        div( class="outer")                %>% 
+          div( class="outer-outer")      
+      
+That's a little better and it produces the same HTML.  It can still be better.
+The above example illustrates two incongruities between code and output. The First is a
+reversal of order between code and HTML output. HTML is ordered from outside-in. The
+**shiny** code is inside-out.  This makes debugging difficult expecially with 
+complex code. If you haven't yet done anything complex with **shiny** yet, you will
+get there. 
+
+The second problems is that code indentation no longer illustrate the nested 
+structure of the output. Nesting that you'd use for **shiny** does not match the 
+typical nesting for HTML. 
+
+The **backpipe** package and backpipe operators solve both of these dilemmas. 
+In fact, writing cleaner **shiny** code was the impetus for the package, though its 
+utility can be found when working with other things too.  Using the backpipe 
 operator the same code can be written as:
       
     div( class="outer-outer")              %<%
@@ -43,8 +63,10 @@ operator the same code can be written as:
         div( class="inner")                %<% 
           h1( "content", role="heading" ) 
 
-Using the backpipe operator, the code more closely matches the generated output. Debugging
-time is lessened and 
+Now, both the order of the tags and the nesting matches the outputed HTML. Your code is
+cleaner, more legible and debugging is easy. Your overall coding time is lessened 
+and you can join me at the pub and buy me a beer.  I'm already there because I am 
+already using **backpipe**
 
 
 ## Usage

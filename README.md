@@ -42,31 +42,17 @@ this can be a little neater:
         div( class="outer")                %>% 
           div( class="outer-outer")      
       
-That's a little better and it produces the same HTML.  It can still be better.
-The above example illustrates two incongruities between code and output. The First is a
-reversal of order between code and HTML output. HTML is ordered from outside-in. The
-**shiny** code is inside-out.  This makes debugging difficult expecially with 
-complex code. If you haven't yet done anything complex with **shiny** yet, you will
-get there. 
+That's a little better and it produces the same HTML. It can still be better.  The above example illustrates two incongruities between code and output. The first is a reversal of order between code and HTML output. HTML is ordered from outside-in. **shiny** has the developer write code inside-out. This makes debugging difficult expecially with complex code. If you haven't done anything complex with **shiny** yet, you will. Don't worry. The second problem is that code indentation no longer illustrate the nested 
+structure of the HTML.  
 
-The second problems is that code indentation no longer illustrate the nested 
-structure of the output. Nesting that you'd use for **shiny** does not match the 
-typical nesting for HTML. 
-
-The **backpipe** package and backpipe operators solve both of these dilemmas. 
-In fact, writing cleaner **shiny** code was the impetus for the package, though its 
-utility can be found when working with other things too.  Using the backpipe 
-operator the same code can be written as:
+The **backpipe** package and backpipe operators solve both of these dilemmas. In fact, writing cleaner **shiny** code was the impetus for this package, though its utility can be found when working with other things too.  Using the backpipe operator the same code can be written as:
       
     div( class="outer-outer")              %<%
       div( class="outer")                  %<% 
         div( class="inner")                %<% 
           h1( "content", role="heading" ) 
 
-Now, both the order of the tags and the nesting matches the outputed HTML. Your code is
-cleaner, more legible and debugging is easy. Your overall coding time is lessened 
-and you can join me at the pub and buy me a beer.  I'm already there because I am 
-already using **backpipe**
+Now, both the order of the tags and the nesting matches the outputed HTML. Your code is cleaner, more legible and debugging is easy. Your overall coding time is lessened.  With the time you save, you can join me at the pub and buy me a beer.  I'm already there. I used **backpipe**. My **shiny** code was done hours ago. 
 
 
 ## Usage

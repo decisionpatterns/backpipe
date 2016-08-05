@@ -1,7 +1,7 @@
 Package: backpipe
 Type: Package
 Title: Backward Pipe Operator
-Version: 0.1.5
+Version: 0.1.6
 Date: 2015-10-19
 Authors@R: c(
     person("Christopher", "Brown", role =c("cre","aut"), email = "chris.brown@decisionpatterns.com"),

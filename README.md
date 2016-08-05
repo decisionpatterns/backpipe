@@ -2,10 +2,13 @@
 
 [![License](http://img.shields.io/badge/license-GPL%20=%202-brightgreen.svg?style=flat)](http://www.gnu.org/licenses/gpl-2.0.html) [![CRAN](http://www.r-pkg.org/badges/version/backpipe)](http://cran.rstudio.com/package=backpipe) [![Downloads](http://cranlogs.r-pkg.org/badges/backpipe?color=brightgreen)](http://www.r-pkg.org/pkg/backpipe)
 
+The backpipe package promotes the writing of legible, interpretable and easy to debug shiny code. 
+
 Popular packages *magrittr* and *pipeR* packages do not provide a backward 
 piping operator. This package provides operators `%<%` 
 for use with *magrittr* and `%<<%` for use with *pipeR*. The package also 
 provides the `backpipe`function for defining backpipe operators 
+
 
 ## Motivation
 
@@ -14,7 +17,7 @@ more common than one might expect.  For example, right-to-left structures are
 better at representing trees, directories and nested structures.  
 
 As an example, consider how **shiny** has the developer write code that 
-produces HTML.  Let's say you wished to produce the HTML:  
+produces HTML.  Let's say you wished to produce the following HTML:  
 
     <div class="outer-outer">
       <div class="outer">
@@ -42,8 +45,7 @@ this can be a little neater:
         div( class="outer")                %>% 
           div( class="outer-outer")      
       
-That's a little better and it produces the same HTML. It can still be better.  The above example illustrates two incongruities between code and output. The first is a reversal of order between code and HTML output. HTML is ordered from outside-in. **shiny** has the developer write code inside-out. This makes debugging difficult expecially with complex code. If you haven't done anything complex with **shiny** yet, you will. Don't worry. The second problem is that code indentation no longer illustrate the nested 
-structure of the HTML.  
+That's a little better and it produces the same HTML, but it can still can be improved. The above example illustrates two incongruities between code and output. The first is a reversal of order between code and HTML output. HTML is ordered from outside-in. **shiny** has the developer write code inside-out. This makes debugging difficult expecially with complex code. If you haven't done anything complex with **shiny** yet, you will. Don't worry. The second problem is that code indentation no longer illustrate the nested structure of the HTML.  
 
 The **backpipe** package and backpipe operators solve both of these dilemmas. In fact, writing cleaner **shiny** code was the impetus for this package, though its utility can be found when working with other things too.  Using the backpipe operator the same code can be written as:
       
@@ -67,11 +69,14 @@ The back-piping operators
 
 ## Technical Implementation
 
-The backpipe operators are implemented as a simple reording of arguments. See
-the `backpipe` code for more details.
+The backpipe operators are implemented as a simple reording of arguments. See the `backpipe` code for more details.
+
 
 ## References
 
-* [Relevant magrittr issue](https://github.com/smbache/magrittr/issues/26)
+ * [Relevant magrittr issue](https://github.com/smbache/magrittr/issues/26)
 
-* [Stackoverflow question](http://stackoverflow.com/questions/31305342/is-right-to-left-operator-associativity-in-r-possible)
+ * [Stackoverflow question](http://stackoverflow.com/questions/31305342/is-right-to-left-operator-associativity-in-r-possible)
+
+
+

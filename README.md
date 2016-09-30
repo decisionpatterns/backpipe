@@ -2,22 +2,62 @@
 
 [![License](http://img.shields.io/badge/license-GPL%20=%202-brightgreen.svg?style=flat)](http://www.gnu.org/licenses/gpl-2.0.html) [![CRAN](http://www.r-pkg.org/badges/version/backpipe)](http://cran.rstudio.com/package=backpipe) [![Downloads](http://cranlogs.r-pkg.org/badges/backpipe?color=brightgreen)](http://www.r-pkg.org/pkg/backpipe)
 
-The backpipe package promotes the writing of legible, interpretable and easy to debug shiny code. 
+The backpipe package provides a single 'backpipe" operator (`%<%`) that allows
+developers to invert the order of operands in a pipe statuement.  In certain
+situations this promotes more legible, interpretable and debuggable code. 
 
-Popular packages *magrittr* and *pipeR* packages do not provide a backward 
-piping operator. This package provides operators `%<%` 
-for use with *magrittr* and `%<<%` for use with *pipeR*. The package also 
-provides the `backpipe`function for defining backpipe operators 
+Popular packages *magrittr* and *pipeR* do not provide a backward pipe operator. 
+This package files the void by providing a `%<%` for use with *magrittr* and 
+`%<<%` for use with *pipeR*. 
+
+The package also provides the `backpipe`function for defining backpipe operators 
+for any forward pipe implementation
+
+
+## Installation
+
+### CRAN 
+
+    install.packages('backpipe')
+
+
+### Github 
+
+    library(devtools)
+    install_github("decisionpatterns/backpipe")
+
+
+## Usage
+
+    # BASIC USAGE
+    mean %<%  1:5   # magrittr
+    mean %<<% 1:5   # pipeR
+     
+    # MULTIPLE STEPS
+    mean %<% range %<% 1:5
+     
+    # WITH FORWARD PIPE
+    # Although technically possible, don't do this
+    add(1) %<% 1:5 %>% multiply_by(2)
+
+
+## Common Use Cases
+
+**backpipe** can be used to:
+
+* write clearer, more debuggable shiny UI code such that the order of code 
+matches the HTML output.
+
+* write test and assertions where the test condition is listed first. 
 
 
 ## Motivation
 
-Some structure are simply better expressed with right-to-left operations. This 
-more common than one might expect.  For example, right-to-left structures are 
-better at representing trees, directories and nested structures.  
-
-As an example, consider how **shiny** has the developer write code that 
-produces HTML.  Let's say you wished to produce the following HTML:  
+`magrittr`, `pipeR` and other pipes allow the developer to create left-to-right
+operation flows.  However, some code is better expressed with a right-to-left 
+syntax and is more common than one might expect. As an example, consider how 
+**shiny** has the developer write HTML-producing code.Let's say you wished to 
+produce the following HTML:  
 
     <div class="outer-outer">
       <div class="outer">
@@ -27,7 +67,7 @@ produces HTML.  Let's say you wished to produce the following HTML:
       </div>
     </div> 
     
-HTML is ugly, but works.  With **shiny**, you'd write: 
+HTML is ugly, but works.  To generate this code using **shiny**, you'd write: 
 
     div( class="outer-outer", 
       div( class="outer",
@@ -37,34 +77,34 @@ HTML is ugly, but works.  With **shiny**, you'd write:
       )
     )
 
-Yuck!!! This is almost as ugly as the HTML.  Using **magrittr** or **pipeR**
-this can be a little neater:
+Yuck!!! This is almost as ugly as the HTML.  **magrittr** or **pipeR**
+allows this can to be cleaner:
 
     h1( "content", role="heading" )        %>%
       div( class="inner")                  %>%
         div( class="outer")                %>% 
           div( class="outer-outer")      
       
-That's a little better and it produces the same HTML, but it can still can be improved. The above example illustrates two incongruities between code and output. The first is a reversal of order between code and HTML output. HTML is ordered from outside-in. **shiny** has the developer write code inside-out. This makes debugging difficult expecially with complex code. If you haven't done anything complex with **shiny** yet, you will. Don't worry. The second problem is that code indentation no longer illustrate the nested structure of the HTML.  
+That's a little better; it produces the same HTML and is much cleaner, but still
+has a big problems. The code does not match the output.  The ordering of the 
+HTML output is outside-in while the code is ordered inside-out. This disconnect
+reduces clarity and makes debugging difficult.
 
-The **backpipe** package and backpipe operators solve both of these dilemmas. In fact, writing cleaner **shiny** code was the impetus for this package, though its utility can be found when working with other things too.  Using the backpipe operator the same code can be written as:
+With the backpipe operator, the same output can be generated with:
       
     div( class="outer-outer")              %<%
       div( class="outer")                  %<% 
         div( class="inner")                %<% 
           h1( "content", role="heading" ) 
 
-Now, both the order of the tags and the nesting matches the outputed HTML. Your code is cleaner, more legible and debugging is easy. Your overall coding time is lessened.  With the time you save, you can join me at the pub and buy me a beer.  I'm already there. I used **backpipe**. My **shiny** code was done hours ago. 
+Notice how that a) the order of the code now matches the output HTML and b) the 
+indentatoin aligns with the hierachal nature of HTML.
 
-
-## Usage
-
-The back-piping operators
-
-    mean %<%  1:3   # magrittr
-    mean %<<% 1:3   # pipeR
-     
-    mean %<% range %<% 1:5
+While there is no question about the utility of the forward pipe, it does not 
+always promote the most expressive code. The **backpipe** solves this problem.
+In fact, writing cleaner **shiny** code was the impetus for this package. Though 
+it, can be used to clarify code in other common operations.  I am looking at you,
+**testthat** and **assertthat**.    
    
 
 ## Technical Implementation
@@ -74,9 +114,9 @@ The backpipe operators are implemented as a simple reording of arguments. See th
 
 ## References
 
- * [Relevant magrittr issue](https://github.com/smbache/magrittr/issues/26)
+ * [Relevant magrittr issue #26](https://github.com/smbache/magrittr/issues/26)
 
- * [Stackoverflow question](http://stackoverflow.com/questions/31305342/is-right-to-left-operator-associativity-in-r-possible)
+ * [Stackoverflow: Is Right-to-left Operator Associativity in R Possible ](http://stackoverflow.com/questions/31305342/is-right-to-left-operator-associativity-in-r-possible)
 
 
 

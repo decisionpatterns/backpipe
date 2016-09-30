@@ -1,17 +1,18 @@
 Package: backpipe
 Type: Package
 Title: Backward Pipe Operator
-Version: 0.1.6
-Date: 2015-10-19
+Version: 0.1.7
+Date: 2016-09-30
 Authors@R: c(
     person("Christopher", "Brown", role =c("cre","aut"), email = "chris.brown@decisionpatterns.com"),
     person(family = "Decision Patterns", role = c("cph") )
     )
 Description: Provides a backward-pipe operator for 'magrittr' (%<%) or 
     'pipeR' (%<<%) that allows for a performing operations from right-to-left. 
-    This is useful in instances where there is right-to-left ordering commonly 
-    observed with nested structures such as trees/directories and markup 
-    languages such as HTML and XML. 
+    This indispensible for writing clear code where there is natural 
+    right-to-left ordering common with nested structures 
+    and hierachies such as trees/directories or markup languages such as HTML 
+    and XML. 
 Depends: 
     R (>= 3.1.0)
 Suggests: 

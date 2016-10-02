@@ -9,7 +9,8 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-Pdevelopers to invert the order of operands in a pipe statuement.  In certain
+The backpipe package provides a single 'backpipe" operator (`%<%`) that allows
+the order of operands in a pipe statuement to be inverted.  In some
 situations this promotes more legible, interpretable and debuggable code. 
 
 Popular packages *magrittr* and *pipeR* do not provide a backward pipe operator. 

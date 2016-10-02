@@ -2,4 +2,5 @@
 ^\.Rproj\.user$
 ^cran-comments\.md$
 backpipe_*.tar.gz
+TODO.md
 

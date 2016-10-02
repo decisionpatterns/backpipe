@@ -1,17 +1,17 @@
 Package: backpipe
 Type: Package
 Title: Backward Pipe Operator
-Version: 0.1.7
-Date: 2016-09-30
+Version: 0.1.8
+Date: 2016-10-01
 Authors@R: c(
     person("Christopher", "Brown", role =c("cre","aut"), email = "chris.brown@decisionpatterns.com"),
     person(family = "Decision Patterns", role = c("cph") )
     )
 Description: Provides a backward-pipe operator for 'magrittr' (%<%) or 
     'pipeR' (%<<%) that allows for a performing operations from right-to-left. 
-    This indispensible for writing clear code where there is natural 
+    This indispensable for writing clear code where there is natural 
     right-to-left ordering common with nested structures 
-    and hierachies such as trees/directories or markup languages such as HTML 
+    and hierarchies such as trees/directories or markup languages such as HTML 
     and XML. 
 Depends: 
     R (>= 3.1.0)
@@ -21,7 +21,8 @@ Suggests:
     R6 (>= 2.1.1),
     testthat (>= 0.10.0),
     shiny (>= 0.12.1),
-    knitr (>= 1.11)
+    knitr (>= 1.11),
+    rmarkdown
 License: GPL-2 | file LICENSE
 URL: https://github.com/decisionpatterns/backpipe
 BugReports: https://github.com/decisionpatterns/backpipe/issues

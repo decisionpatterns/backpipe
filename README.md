@@ -2,8 +2,8 @@
 
 [![License](http://img.shields.io/badge/license-GPL%20=%202-brightgreen.svg?style=flat)](http://www.gnu.org/licenses/gpl-2.0.html) [![CRAN](http://www.r-pkg.org/badges/version/backpipe)](http://cran.rstudio.com/package=backpipe) [![Downloads](http://cranlogs.r-pkg.org/badges/backpipe?color=brightgreen)](http://www.r-pkg.org/pkg/backpipe)
 
-The backpipe package provides a single 'backpipe" operator (`%<%`) that allows
-developers to invert the order of operands in a pipe statuement.  In certain
+TThe backpipe package provides a single 'backpipe" operator (`%<%`) that allows
+the order of operands in a pipe statuement to be inverted. In some
 situations this promotes more legible, interpretable and debuggable code. 
 
 Popular packages *magrittr* and *pipeR* do not provide a backward pipe operator. 

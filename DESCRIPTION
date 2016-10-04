@@ -1,8 +1,8 @@
 Package: backpipe
 Type: Package
 Title: Backward Pipe Operator
-Version: 0.1.8
-Date: 2016-10-01
+Version: 0.1.8.1
+Date: 2016-10-03
 Authors@R: c(
     person("Christopher", "Brown", role =c("cre","aut"), email = "chris.brown@decisionpatterns.com"),
     person(family = "Decision Patterns", role = c("cph") )
@@ -26,5 +26,6 @@ Suggests:
 License: GPL-2 | file LICENSE
 URL: https://github.com/decisionpatterns/backpipe
 BugReports: https://github.com/decisionpatterns/backpipe/issues
-Roxygen: list(wrap = FALSE)
+Roxygen: list(wrap = FALSE, markdown=TRUE)
 VignetteBuilder: knitr
+RoxygenNote: 5.0.1.9000

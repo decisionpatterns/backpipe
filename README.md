@@ -3,8 +3,8 @@
 [![License](https://img.shields.io/badge/license-GPL%20=%202-brightgreen.svg?style=flat)](https://www.gnu.org/licenses/gpl-2.0.html) 
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/backpipe)](https://cran.r-project.org/package=backpipe)
 [![Downloads](https://cranlogs.r-pkg.org/badges/backpipe?color=brightgreen)](http://www.r-pkg.org/pkg/backpipe)
-[![](http://cranlogs.r-pkg.org/badges/grand-total/formula.tools)](http://cran.rstudio.com/web/packages/formula.tools/index.html)
-[![software impact](http://depsy.org/api/package/r/formula.tools/badge.svg)](http://depsy.org/package/r/formula.tools)
+[![](http://cranlogs.r-pkg.org/badges/grand-total/backpipe)](http://cran.rstudio.com/web/packages/backpipe/index.html)
+[![software impact](http://depsy.org/api/package/r/backpipe/badge.svg)](http://depsy.org/package/r/backpipe)
 
 
 

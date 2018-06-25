@@ -1,0 +1,4 @@
+Name: Insert backpipe operator (%<%)
+Description: Inserts backpipe (%<%) at the cursor position.
+Binding: insert_backpipe_addin
+Interactive: false

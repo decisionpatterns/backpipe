@@ -1,22 +1,27 @@
 # Backpipe
 
 [![License](https://img.shields.io/badge/license-GPL%20=%202-brightgreen.svg?style=flat)](https://www.gnu.org/licenses/gpl-2.0.html) 
-[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/backpipe)](https://cran.r-project.org/package=backpipe)
-[![Downloads](https://cranlogs.r-pkg.org/badges/backpipe?color=brightgreen)](http://www.r-pkg.org/pkg/backpipe)
-[![](http://cranlogs.r-pkg.org/badges/grand-total/backpipe)](http://cran.rstudio.com/web/packages/backpipe/index.html)
-[![software impact](http://depsy.org/api/package/r/backpipe/badge.svg)](http://depsy.org/package/r/backpipe)
+[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/backpipe)](https://cran.r-project.org/package=backpipe)
+[![Downloads](https://cranlogs.r-pkg.org/badges/backpipe?color=brightgreen)](https://www.r-pkg.org/pkg/backpipe)
+[![](https://cranlogs.r-pkg.org/badges/grand-total/backpipe)](https://cran.rstudio.com/web/packages/backpipe/index.html)
+[![Research Software Impact](http://depsy.org/api/package/cran/backpipe/badge.svg)](http://depsy.org/package/r/backpipe)
 
 
-The backpipe package provides a single 'backpipe" operator (`%<%`) that allows
-the order of operands in a pipe statuement to be inverted. In some
+The *backpipe* package provides a single 'backpipe' operator (`%<%`) that allows
+the order of operands in a pipe statuement to be reversed. In some
 situations this promotes more legible, interpretable and debuggable code. 
 
 Popular packages *magrittr* and *pipeR* do not provide a backward pipe operator. 
-This package files the void by providing a `%<%` for use with *magrittr* and 
+This package fills the void by providing a `%<%` for use with *magrittr* and 
 `%<<%` for use with *pipeR*. 
 
-The package also provides the `backpipe`function for defining backpipe operators 
-for any forward pipe implementation
+An RStudio addin (`insert_backpipe _addin`) provides for inserting the
+backpipe operator at the cursor location. It is recommended that this be bound 
+to the `CTRL + SHIFT + <` keyboard shortcut. This can be accomplished in RStudio
+from the **Tools > Modify Keyboard Shortcuts** menu.
+
+The package provides the `backpipe`function for defining backpipe operators 
+for any forward pipe implementation.
 
 
 ## Installation

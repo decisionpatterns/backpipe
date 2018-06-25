@@ -1,7 +1,7 @@
 
 ## TODO
 
- * Implement `%:%`or `:` or `::`-- 
+ * [ ] Issue 1: Implement `%:%`or `:` or `::`-- 
    for declarative type programing, for example: 
 
      log_warn :: 'hello world'    # instead of 
@@ -11,15 +11,18 @@
     
      print :: log_warn :: 'hello world' 
 
-   In which both print and log_warn are  provide the argument.
+   In which both print and log_warn provide the argument.
 
+   print :: log_warn :: .('hello world')
+   
 
- * Make composing operator `%,%`
+ * [ ] Make composing operator `%,%` for building arguments lists.
 
     list(a,b)       # Equivalent to:
     list(a) %,% b 
     list(a) %,% list(b)
 
-   It is not clear how this interoperates with the %<% operator.
+   a="living life" %,% b="like a" %,% "renegade" %>% fn()
+   fn( a="living life", b="like a", "renedage" )
 
-
+   It is not clear how this interoperates with the %<% operator.  

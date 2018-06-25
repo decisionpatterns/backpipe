@@ -2,12 +2,21 @@
 title: "Backpipe Operations"
 author: "Christopher Brown"
 date: "`r Sys.Date()`"
-output: rmarkdown::html_vignette
+output:
+  rmarkdown::html_vignette:
+    toc: true
 vignette: >
   %\VignetteIndexEntry{Backpipe Operations}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
 
 The backpipe package provides a single 'backpipe" operator (`%<%`) that allows
 the order of operands in a pipe statuement to be inverted.  In some
@@ -23,12 +32,12 @@ for any forward pipe implementation
 
 ## Installation
 
-### CRAN 
+### CRAN (release)
 
     install.packages('backpipe')
 
 
-### Github 
+### Github (devel)
 
     library(devtools)
     install_github("decisionpatterns/backpipe")
@@ -40,22 +49,42 @@ for any forward pipe implementation
     mean %<%  1:5   # magrittr
     mean %<<% 1:5   # pipeR
      
-    # MULTIPLE STEPS
+    # CHAINING 
     mean %<% range %<% 1:5
      
-    # WITH FORWARD PIPE
-    # Although technically possible, don't do this
+    # CHAINING WITH MIXED PIPES
+    # Chained with mixed pipes are performed left-to-right
+    # Although technically possible, this is probably a bad idea.
     add(1) %<% 1:5 %>% multiply_by(2)
+    1:5 %>% add(1) %>% multiply_by(2)  # same
+
+
+## Keyboard Shortcut
+
+The `insert_backpipe` function can be bound to a keyboard shortcut. We 
+recommend: `CTRL + SHIFT + <` 
+
+This can be done through RStudio's **Tools > Modify Keyboard Shortcuts** menu. 
+Future versions of this package may do this automatically.
 
 
 ## Common Use Cases
 
 **backpipe** can be used to:
 
-* write clearer, more debuggable shiny UI code such that the order of code 
-matches the HTML output.
+* Write clearer, more debuggable shinyUI code such that the order of 
+code matches the HTML output.
+````
+     div() %<% p %<% "Hello World"
+````
 
-* write test and assertions where the test condition is listed first. 
+* write tests, assertions, logging statements, etc. where the command is listed
+first
+````
+    warn %<% "there is a problem here"  # OR 
+    expect_true() %<% (ans==1)          # OR  
+    log_warn %<% "This didn't work"
+````
 
 
 ## Motivation
@@ -116,7 +145,8 @@ it, can be used to clarify code in other common operations.  I am looking at you
 
 ## Technical Implementation
 
-The backpipe operators are implemented as a simple reording of arguments. See the `backpipe` code for more details.
+The backpipe operators are implemented as a simple reording of arguments. See 
+the `backpipe` code for more details.
 
 
 ## References

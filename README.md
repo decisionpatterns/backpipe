@@ -3,13 +3,13 @@
 [![License](https://img.shields.io/badge/license-GPL%20=%202-brightgreen.svg?style=flat)](https://www.gnu.org/licenses/gpl-2.0.html) 
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/backpipe)](https://cran.r-project.org/package=backpipe)
 [![Downloads](https://cranlogs.r-pkg.org/badges/backpipe?color=brightgreen)](https://www.r-pkg.org/pkg/backpipe)
-[![](https://cranlogs.r-pkg.org/badges/grand-total/backpipe)](https://cran.rstudio.com/web/packages/backpipe/index.html)
+[![](https://cranlogs.r-pkg.org/badges/grand-total/backpipe)](https://cran.r-project.org/package=backpipe)
 [![Research Software Impact](http://depsy.org/api/package/cran/backpipe/badge.svg)](http://depsy.org/package/r/backpipe)
 
 
 The *backpipe* package provides a single 'backpipe' operator (`%<%`) that allows
 the order of operands in a pipe statuement to be reversed. In some
-situations this promotes more legible, interpretable and debuggable code. 
+situations this promotes more legible and debuggable code. 
 
 Popular packages *magrittr* and *pipeR* do not provide a backward pipe operator. 
 This package fills the void by providing a `%<%` for use with *magrittr* and 

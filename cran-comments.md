@@ -1,3 +1,6 @@
 ## Fix CRAN rejection conditions
 
- * Fix URL
+ * Fix title in DESCRIPTION
+ * Fix URLs
+ * Fix spelling errors in DESCRIPTION
+ * Update Vignette

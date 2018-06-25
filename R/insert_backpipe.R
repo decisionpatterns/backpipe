@@ -1,6 +1,6 @@
-#' Backpipe Shortcut
+#' Insert backpipe
 #'
-#' Call this function as an addin to insert `%<-%` at the cursor position.
+#' Call this function to insert `%<-%` at the cursor position.
 #' 
 #' @details 
 #' 
@@ -9,7 +9,7 @@
 #' @md 
 #' @export
 
-insert_backpipe_addin <- function() {
+insert_backpipe <- function() {
   if( requireNamespace('rstudioapi', quietly = TRUE ) )
     rstudioapi::insertText(" %<% ")
 }

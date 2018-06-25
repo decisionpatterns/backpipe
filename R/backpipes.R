@@ -51,16 +51,24 @@
 #'           h1( "content", role="heading" )
 #'    }          
 #'
-#' @export 
 #' @rdname backpipes
-#' @aliases %<%                       
+#' @aliases %<%
+#' @export                        
 `%<%` <- backpipe('%>%')
 
+#' #' @rdname backpipes
+#' #' @aliases %:%
+#' #' @export 
+#' `%:%` <- backpipe('%>%')
 
 #' @rdname backpipes
 #' @aliases %<<%
 `%<<%` <- backpipe('%>>%')
 
+#' #' @rdname backpipes
+#' #' @aliases %::%
+#' #' @export 
+#' `%::%` <- backpipe('%>>%')
 
 
 # This is conditional export based on whether magrittr or pipeR are loaded.

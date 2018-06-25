@@ -2,3 +2,4 @@
 
 export("%<%")
 export(backpipe)
+export(insert_backpipe_addin)

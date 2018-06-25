@@ -7,7 +7,6 @@
 [![software impact](http://depsy.org/api/package/r/backpipe/badge.svg)](http://depsy.org/package/r/backpipe)
 
 
-
 The backpipe package provides a single 'backpipe" operator (`%<%`) that allows
 the order of operands in a pipe statuement to be inverted. In some
 situations this promotes more legible, interpretable and debuggable code. 
@@ -42,19 +41,23 @@ for any forward pipe implementation
     # MULTIPLE STEPS
     mean %<% range %<% 1:5
      
-    # WITH FORWARD PIPE
+    # WITH FORWARD PIPE: 
     # Although technically possible, don't do this
-    add(1) %<% 1:5 %>% multiply_by(2)
+    add(1) %<% 1:5 %>% multiply_by(2)   # same as 1:5 %>% add(1) %>% multiply_by(2)
 
 
 ## Common Use Cases
 
 **backpipe** can be used to:
 
-* write clearer, more debuggable shiny UI code such that the order of code 
+* write clearer, more debuggable shinyUI code such that the order of code 
 matches the HTML output.
 
+    div()  %<% p("This is some text")
+
 * write test and assertions where the test condition is listed first. 
+
+   assert_equal(1) %<% 1
 
 
 ## Motivation
@@ -83,7 +86,7 @@ HTML is ugly, but works.  To generate this code using **shiny**, you'd write:
       )
     )
 
-Yuck!!! This is almost as ugly as the HTML.  **magrittr** or **pipeR**
+Yuck!!! This is uglier than HTML.  **magrittr** or **pipeR**
 allows this can to be cleaner:
 
     h1( "content", role="heading" )        %>%
@@ -115,7 +118,8 @@ it, can be used to clarify code in other common operations.  I am looking at you
 
 ## Technical Implementation
 
-The backpipe operators are implemented as a simple reording of arguments. See the `backpipe` code for more details.
+The backpipe operators are implemented as a simple reording of arguments. See 
+the `backpipe` code for more details.
 
 
 ## References
@@ -123,6 +127,3 @@ The backpipe operators are implemented as a simple reording of arguments. See th
  * [Relevant magrittr issue #26](https://github.com/smbache/magrittr/issues/26)
 
  * [Stackoverflow: Is Right-to-left Operator Associativity in R Possible ](http://stackoverflow.com/questions/31305342/is-right-to-left-operator-associativity-in-r-possible)
-
-
-

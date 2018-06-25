@@ -31,4 +31,3 @@ not allowed.
 \code{\link[magrittr]{\%>\%}} \cr
 \code{\link[pipeR]{\%>>\%}} \cr
 }
-

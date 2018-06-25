@@ -46,6 +46,13 @@ for any forward pipe implementation
     add(1) %<% 1:5 %>% multiply_by(2)   # same as 1:5 %>% add(1) %>% multiply_by(2)
 
 
+### Keyboard Binding 
+
+A rstudio addin is included with the package, 'insert_backpipe_addin()` which 
+can be mapped to an rstudio shortcut. It is recommended that this be bound to 
+**CTRL + SHIFT + <**
+
+
 ## Common Use Cases
 
 **backpipe** can be used to:

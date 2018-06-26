@@ -1,11 +1,15 @@
 # Backpipe
 
-[![License](https://img.shields.io/badge/license-GPL%20=%202-brightgreen.svg?style=flat)](https://www.gnu.org/licenses/gpl-2.0.html) 
+<!--
+[![License](https://img.shields.io/badge/license-GPL=2-brightgreen.svg?style=flat)](https://www.gnu.org/licenses/gpl-2.0.html)
+-->
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/backpipe)](https://cran.r-project.org/package=backpipe)
 [![Downloads](https://cranlogs.r-pkg.org/badges/backpipe?color=brightgreen)](https://www.r-pkg.org/pkg/backpipe)
 [![](https://cranlogs.r-pkg.org/badges/grand-total/backpipe)](https://cran.r-project.org/package=backpipe)
+https://img.shields.io/badge/license-GPL%20=%202-brightgreen.svg?style=flat
+<!--
 [![Research Software Impact](http://depsy.org/api/package/cran/backpipe/badge.svg)](http://depsy.org/package/r/backpipe)
-
+-->
 
 The *backpipe* package provides a single 'backpipe' operator (`%<%`) that allows
 the order of operands in a pipe statuement to be reversed. In some

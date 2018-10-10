@@ -11,9 +11,9 @@ https://img.shields.io/badge/license-GPL%20=%202-brightgreen.svg?style=flat
 [![Research Software Impact](http://depsy.org/api/package/cran/backpipe/badge.svg)](http://depsy.org/package/r/backpipe)
 -->
 
-The *backpipe* package provides a single 'backpipe' operator (`%<%`) that allows
-the order of operands in a pipe statuement to be reversed. In some
-situations this promotes more legible and debuggable code. 
+The *backpipe* package provides a single 'backpipe' (right-to-left) 
+operator (`%<%`) that allows the order of operands in a pipe statuement to be 
+reversed. In some situations this promotes more legible and debuggable code. 
 
 Popular packages *magrittr* and *pipeR* do not provide a backward pipe operator. 
 This package fills the void by providing a `%<%` for use with *magrittr* and 

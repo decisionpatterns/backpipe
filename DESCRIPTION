@@ -16,8 +16,9 @@ Description: Provides a backward-pipe operator for 'magrittr' (%<%) or
     shortcut. 
 Depends:
     R (>= 3.1.0)
+Imports: 
+    magrittr
 Suggests:
-    magrittr (>= 1.5),
     pipeR (>= 0.6.0.6),
     R6 (>= 2.1.1),
     testthat (>= 1.0.0),
@@ -28,7 +29,7 @@ Suggests:
 License: GPL-2 | file LICENSE
 URL: https://github.com/decisionpatterns/backpipe
 BugReports: https://github.com/decisionpatterns/backpipe/issues
-RoxygenNote: 6.0.1.9000
+RoxygenNote: 6.1.0
 Roxygen: list(markdown = TRUE)
 Encoding: UTF-8
 VignetteBuilder: knitr

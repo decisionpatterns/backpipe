@@ -7,7 +7,7 @@
 insert_backpipe()
 }
 \description{
-Call this function to insert \code{\%&lt;-\%} at the cursor position.
+Call this function to insert \code{\%<-\%} at the cursor position.
 }
 \details{
 Use \strong{Tools > Modify Keyboard Shortcuts} to bind a  ->.;  ->.;
